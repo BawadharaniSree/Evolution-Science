@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Evolution of Knowledge</title>
+    <!-- Google Fonts for Enhanced Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Animations CSS -->
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="discoveries.html">Discoveries</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="home">
+        <h1>Welcome to the Science Discoveries Website! 🌍🔬</h1>
+        <p>The Evolution of Knowledge: A Legacy of Discoveries. 🌟</p>
+        <a href="#timeline" class="cta-button">Discover More</a>
+    </header>
+
+    <!-- Interactive Timeline Section -->
+    <section id="timeline">
+        <h2>Scientific Discoveries Timeline</h2>
+        <div class="timeline-roadmap">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item">
+                <div class="timeline-content" onclick="openDiscovery('Galileo Telescope')">
+                    <h3>1609 - Galileo's Telescope</h3>
+                    <p>Changed how we view the universe.</p>
+                </div>
+            </div>
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item">
+                <div class="timeline-content" onclick="openDiscovery('Penicillin')">
+                    <h3>1928 - Discovery of Penicillin</h3>
+                    <p>Revolutionized modern medicine.</p>
+                </div>
+            </div>
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item">
+                <div class="timeline-content" onclick="openDiscovery('Discovery of Electricity')">
+                    <h3>1752 - Discovery of Electricity</h3>
+                    <p>Benjamin Franklin’s discovery sparked the modern world.</p>
+                </div>
+            </div>
+            <!-- Timeline Item 4 -->
+            <div class="timeline-item">
+                <div class="timeline-content" onclick="openDiscovery('Theory of Relativity')">
+                    <h3>1905 - Theory of Relativity</h3>
+                    <p>Einstein’s famous equation reshaped our understanding of space and time.</p>
+                </div>
+            </div>
+            <!-- Timeline Item 5 -->
+            <div class="timeline-item">
+                <div class="timeline-content" onclick="openDiscovery('DNA Structure')">
+                    <h3>1953 - Discovery of DNA Structure</h3>
+                    <p>Unlocked the mysteries of life.</p>
+                </div>
+            </div>
+            <!-- Timeline Item 6 -->
+            <div class="timeline-item">
+                <div class="timeline-content" onclick="openDiscovery('The Internet')">
+                    <h3>1969 - The Internet</h3>
+                    <p>The invention that connected the world like never before.</p>
+                </div>
+            </div>
+            <!-- Timeline Item 7 (Example for expansion) -->
+            <div class="timeline-item">
+                <div class="timeline-content" onclick="openDiscovery('Quantum Computing')">
+                    <h3>1980 - Quantum Computing</h3>
+                    <p>Revolutionizing computational power.</p>
+                </div>
+            </div>
+            <!-- Add more timeline items here as needed -->
+        </div>
+        <!-- Hover Image -->
+        <img id="hover-image" src="" alt="Hover Image" />
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to exploring and sharing the amazing scientific discoveries that have shaped our understanding of the world.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or suggestions, feel free to reach out to us!</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 SVCE Science Club | Spark 2 Science - UI Design Competition</p>
+        <p>Follow us on <a href="https://www.facebook.com/SVCEScienceClub" target="_blank">Facebook</a> | <a href="https://www.instagram.com/svce.science_club/" target="_blank">Instagram</a></p>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Show image near cursor on hover
+        function showImage(image) {
+            const hoverImage = document.getElementById('hover-image');
+            hoverImage.src = `images/${image}`;
+            hoverImage.style.display = 'block';
+            // Position the image near the cursor with slight offset
+            hoverImage.style.top = `${event.clientY + 10}px`;
+            hoverImage.style.left = `${event.clientX + 10}px`;
+        }
+
+        // Hide the hover image
+        function hideImage() {
+            const hoverImage = document.getElementById('hover-image');
+            hoverImage.style.display = 'none';
+        }
+
+        // Handle hover events for timeline items
+        document.querySelectorAll('.timeline-item').forEach((item, index) => {
+            item.addEventListener('mouseover', () => {
+                const images = [
+                    'galileo-telescope.jpg',
+                    'penicillin.jpg',
+                    'electricity.jpg',
+                    'relativity.jpg',
+                    'dna.jpg',
+                    'internet.jpg',
+                    'quantum-computing.jpg' // Add corresponding image for the 7th item
+                ];
+                if (images[index]) {
+                    showImage(images[index]);
+                }
+            });
+
+            item.addEventListener('mouseout', hideImage);
+        });
+    </script>
+</body>
+</html>

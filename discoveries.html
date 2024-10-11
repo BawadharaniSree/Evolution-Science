@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Discoveries</title>
+    <!-- Google Fonts for Enhanced Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Animations CSS -->
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#timeline">Timeline</a></li>
+            <li><a href="discoveries.html">Discoveries</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="head">
+        <h1>🌟 Science Discoveries 🌟</h1>
+        <p>Join us on a thrilling adventure through the greatest scientific breakthroughs that changed our world!</p>
+    </header>
+
+    <!-- Discovery Grid -->
+    <div class="discovery-grid">
+        <div class="discovery-card" id="galileo" data-title="Galileo's Telescope (1609)" data-description="Galileo revolutionized astronomy with his improved telescope! 🔭 See the stars like never before! It opened up a new universe of knowledge." data-facts="Fun Fact: Galileo's telescope was one of the first to use a convex lens, allowing for clearer images." data-image="images/galileo-telescope.jpg">
+            <h2>🔭 Galileo's Telescope</h2>
+            <p>Discover the stars!</p>
+            <img src="images/galileo-telescope.jpg" alt="Galileo's Telescope" class="discovery-img" loading="lazy">
+        </div>
+
+        <div class="discovery-card" id="penicillin" data-title="Penicillin (1928)" data-description="Say hello to antibiotics! 💊 Thanks to Alexander Fleming, millions of lives were saved! This discovery marked the dawn of modern medicine." data-facts="Fun Fact: Penicillin was discovered accidentally when Fleming noticed mold inhibiting bacteria!" data-image="images/penicillin.jpg">
+            <h2>💊 Penicillin</h2>
+            <p>Transforming medicine!</p>
+            <img src="images/penicillin.jpg" alt="Penicillin Discovery" class="discovery-img" loading="lazy">
+        </div>
+
+        <div class="discovery-card" id="electricity" data-title="Discovery of Electricity (1752)" data-description="Feel the spark! ⚡ Benjamin Franklin's kite experiment proved that lightning is electric! This laid the groundwork for understanding electricity." data-facts="Fun Fact: Franklin's experiment was done with a kite and a key during a thunderstorm!" data-image="images/electricity.jpg">
+            <h2>⚡ Discovery of Electricity</h2>
+            <p>Lightning is electric!</p>
+            <img src="images/electricity.jpg" alt="Discovery of Electricity" class="discovery-img" loading="lazy">
+        </div>
+
+        <div class="discovery-card" id="relativity" data-title="Theory of Relativity (1905)" data-description="Einstein's groundbreaking theory! 🌀 Time and space are not what they seem! This theory revolutionized physics and our understanding of the universe." data-facts="Fun Fact: Einstein's theory also introduced the famous equation E=mc²!" data-image="images/relativity.jpg">
+            <h2>🌀 Theory of Relativity</h2>
+            <p>Understanding the universe!</p>
+            <img src="images/relativity.jpg" alt="Theory of Relativity" class="discovery-img" loading="lazy">
+        </div>
+
+        <div class="discovery-card" id="dna" data-title="DNA Structure (1953)" data-description="Unlocking the secrets of life! 🧬 Watson and Crick discovered the double helix! This discovery paved the way for modern genetics." data-facts="Fun Fact: The double helix structure was inspired by a photo taken by Rosalind Franklin!" data-image="images/dna.jpg">
+            <h2>🧬 DNA Structure</h2>
+            <p>Secrets of life!</p>
+            <img src="images/dna.jpg" alt="DNA Structure" class="discovery-img" loading="lazy">
+        </div>
+
+        <div class="discovery-card" id="internet" data-title="The Internet (1969)" data-description="Connecting the world! 🌐 The internet has transformed how we communicate! It has revolutionized access to information and social interaction." data-facts="Fun Fact: The first message sent over the internet was 'LO', intended to be 'LOGIN', but the system crashed!" data-image="images/internet.jpg">
+            <h2>🌐 The Internet</h2>
+            <p>Revolutionizing communication!</p>
+            <img src="images/internet.jpg" alt="The Internet" class="discovery-img" loading="lazy">
+        </div>
+        
+        <!-- Additional Discovery Card Example -->
+        <div class="discovery-card" id="quantum-computing" data-title="Quantum Computing (1980)" data-description="Harnessing the power of quantum mechanics! 🖥️ Quantum computers promise unprecedented computational speeds and capabilities." data-facts="Fun Fact: Quantum bits or qubits can represent both 0 and 1 simultaneously, enabling massive parallel processing." data-image="images/quantum-computing.jpg">
+            <h2>🖥️ Quantum Computing</h2>
+            <p>Revolutionizing computation!</p>
+            <img src="images/quantum-computing.jpg" alt="Quantum Computing" class="discovery-img" loading="lazy">
+        </div>
+        <!-- Add more discovery cards here as needed -->
+    </div>
+
+    <!-- Modal for Detailed Information -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <p id="modal-facts" style="font-weight: bold;"></p>
+            <img id="modal-image" src="" alt="" style="width: 100%; border-radius: 8px;">
+            <div class="back-button">
+                <a href="discoveries.html">Back to Discoveries</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 SVCE Science Club | Spark 2 Science - UI Design Competition</p>
+        <p>Follow us on <a href="https://www.facebook.com/SVCEScienceClub" target="_blank">Facebook</a> | <a href="https://www.instagram.com/svce.science_club/" target="_blank">Instagram</a></p>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Modal Functionality for discoveries.html
+
+        const modal = document.getElementById("myModal");
+        const modalTitle = document.getElementById("modal-title");
+        const modalDescription = document.getElementById("modal-description");
+        const modalFacts = document.getElementById("modal-facts");
+        const modalImage = document.getElementById("modal-image");
+        const closeModal = document.getElementsByClassName("close")[0];
+
+        // Function to open modal with specific discovery details
+        function openModal(title, description, facts, image) {
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            modalFacts.textContent = facts;
+            modalImage.src = image;
+            modal.style.display = "block";
+        }
+
+        // Add click event to each discovery card
+        document.querySelectorAll('.discovery-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.getAttribute('data-title');
+                const description = this.getAttribute('data-description');
+                const facts = this.getAttribute('data-facts');
+                const image = this.getAttribute('data-image');
+
+                openModal(title, description, facts, image);
+            });
+        });
+
+        // Close modal when user clicks on <span> (x)
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close modal when user clicks anywhere outside of the modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Open modal based on URL hash
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const hash = window.location.hash.substring(1); // Remove the #
+            if(hash) {
+                const card = document.getElementById(hash);
+                if(card) {
+                    const title = card.getAttribute('data-title');
+                    const description = card.getAttribute('data-description');
+                    const facts = card.getAttribute('data-facts');
+                    const image = card.getAttribute('data-image');
+
+                    openModal(title, description, facts, image);
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
