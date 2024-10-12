@@ -21,9 +21,6 @@ body {
   justify-content: center;
 }
 
-.navbar li {
-  /* No float needed for flex layout */
-}
 
 .navbar li a {
   display: block;
@@ -347,4 +344,29 @@ html {
   top: 0;
   bottom: 0;
   transform: translateX(-50%);
+}
+
+footer {
+  text-align: center;
+  background: #5e4b8b; /* Vibrant cyan with transparency */
+  backdrop-filter: blur(10px); /* Glass blur effect */
+  padding: 15px; /* Reduced padding */
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+  margin-top: auto; /* Push footer to the bottom */
+}
+
+.social-media {
+  margin-top: 10px; /* Space above the icons */
+}
+
+.social-media a {
+  color: #f0f0f0; /* Icon color */
+  margin: 0 10px; /* Space between icons */
+  font-size: 24px; /* Size of the icons */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.social-media a:hover {
+  color: #fbff00; /* Change color on hover */
 }
