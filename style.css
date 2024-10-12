@@ -338,3 +338,13 @@ footer a:hover {
 html {
   scroll-behavior: smooth;
 }
+
+.timeline-line {
+  position: absolute;
+  width: 6px;
+  background-color: #5e4b8b;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+}
